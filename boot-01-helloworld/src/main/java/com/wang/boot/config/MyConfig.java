@@ -3,6 +3,7 @@ package com.wang.boot.config;
 import ch.qos.logback.core.db.DBHelper;
 import com.wang.boot.bean.Pet;
 import com.wang.boot.bean.User;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
@@ -18,6 +19,7 @@ import org.springframework.context.annotation.Import;
  *       给容器中自动创建出这两个类型的组件、默认组件的名字就是全类名
  **/
 @Import({User.class, DBHelper.class})
+@ConditionalOnBean(name = "tom22")
 @Configuration(proxyBeanMethods = false) //告诉SpringBoot这是一个配置类 == 配置文件
 public class MyConfig {
 
@@ -25,6 +27,8 @@ public class MyConfig {
     @Bean //给容器中添加组件。以方法名作为组件的id。返回类型就是组件类型。返回的值，就是组件在容器中的实例
     public User user01(){
         User zhangsan = new User("zhangsan", 18);
+        //user组件依赖了Pet组件
+        //zhangsan.setPet(tomcatPet());
         return zhangsan;
     }
 

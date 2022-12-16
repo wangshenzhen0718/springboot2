@@ -25,6 +25,10 @@ public class MainApplication {
         User user1 = myConfig.user01();
         System.out.println(user==user1);
 
+        boolean b = context.containsBean("user01");
+
+        System.out.println("容器中是否包含beam："+b);
+
 
     }
 }
