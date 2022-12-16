@@ -1,5 +1,6 @@
 package com.wang.boot;
 
+import com.wang.boot.bean.Car;
 import com.wang.boot.bean.User;
 import com.wang.boot.config.MyConfig;
 import org.springframework.boot.SpringApplication;
@@ -28,6 +29,10 @@ public class MainApplication {
         boolean b = context.containsBean("user01");
 
         System.out.println("容器中是否包含beam："+b);
+
+        Car car = context.getBean("car", Car.class);
+        System.out.println(car);
+
 
 
     }

@@ -22,6 +22,10 @@ import org.springframework.context.annotation.ImportResource;
 @ImportResource("classpath:bean.xml")
 //@ConditionalOnBean(name = "tom22")
 @Configuration(proxyBeanMethods = false) //告诉SpringBoot这是一个配置类 == 配置文件
+
+//@EnableConfigurationProperties(Car.class)
+//1、开启Car配置绑定功能
+//2、把这个Car这个组件自动注册到容器中
 public class MyConfig {
 
 
