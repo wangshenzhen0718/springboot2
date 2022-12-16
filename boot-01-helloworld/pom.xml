@@ -15,6 +15,13 @@
         <version>2.3.4.RELEASE</version>
     </parent>
 
+    <!--1、查看spring-boot-dependencies里面规定当前依赖的版本 用的 key。
+        2、在当前项目里面重写配置-->
+    <properties>
+        <lombok.version>1.18.20</lombok.version>
+    </properties>
+
+
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -24,7 +31,6 @@
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <version>1.18.20</version>
         </dependency>
 
         <dependency>
