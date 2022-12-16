@@ -3,10 +3,10 @@ package com.wang.boot.config;
 import ch.qos.logback.core.db.DBHelper;
 import com.wang.boot.bean.Pet;
 import com.wang.boot.bean.User;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
+import org.springframework.context.annotation.ImportResource;
 
 /**
  * 1、配置类里面使用@Bean标注在方法上给容器注册组件，默认也是单实例的
@@ -19,7 +19,8 @@ import org.springframework.context.annotation.Import;
  *       给容器中自动创建出这两个类型的组件、默认组件的名字就是全类名
  **/
 @Import({User.class, DBHelper.class})
-@ConditionalOnBean(name = "tom22")
+@ImportResource("classpath:bean.xml")
+//@ConditionalOnBean(name = "tom22")
 @Configuration(proxyBeanMethods = false) //告诉SpringBoot这是一个配置类 == 配置文件
 public class MyConfig {
 
