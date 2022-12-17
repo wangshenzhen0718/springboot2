@@ -1,10 +1,10 @@
-spring:
-  mvc:
-#自定义静态资源查找路径
-    static-path-pattern: /wsz/**
-#自定义静态资源查找目录
-  web:
-    resources:
-      static-locations: classpath:/haha/
-
-
+#spring:
+#  mvc:
+##自定义静态资源查找路径
+#    static-path-pattern: /wsz/**
+##自定义静态资源查找目录
+#  web:
+#    resources:
+#      static-locations: classpath:/haha/
+#
+#
